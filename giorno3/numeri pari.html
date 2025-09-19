@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Somma dei primi numeri</title>
+</head>
+<body>
+  <h1>Calcolo della somma dei primi numeri</h1>
+
+  <label for="numero">Inserisci un numero:</label>
+  <input type="number" id="numero" min="0" placeholder="Es. 5"><br><br>
+
+  <button onclick="calcolaSomma()">Calcola somma</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function calcolaSomma() {
+      let n = parseInt(document.getElementById("numero").value);
+
+      if (isNaN(n) || n < 0) {
+        document.getElementById("risultato").textContent = "Inserisci un numero intero non negativo.";
+        return;
+      }
+
+      let somma = 0;
+      for (let i = 1; i <= n; i++) {
+        somma += i;
+      }
+
+      document.getElementById("risultato").textContent = `La somma dei primi ${n} numeri è: ${somma}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Verifica anno bisestile</title>
+</head>
+<body>
+  <h1>Controllo anno bisestile</h1>
+
+  <label for="anno">Inserisci un anno:</label>
+  <input type="number" id="anno" placeholder="Es. 2024"><br><br>
+
+  <button onclick="controllaBisestile()">Verifica</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function controllaBisestile() {
+      let anno = parseInt(document.getElementById("anno").value);
+
+      // Controllo validità input
+      if (isNaN(anno)) {
+        document.getElementById("risultato").textContent = "Per favore, inserisci un anno valido.";
+        return;
+      }
+
+      if ((anno % 4 === 0 && anno % 100 !== 0) || (anno % 400 === 0)) {
+        document.getElementById("risultato").textContent = "L'anno è bisestile.";
+      } else {
+        document.getElementById("risultato").textContent = "L'anno non è bisestile.";
+      }
+    }
+  </script>
+</body>
+</html>

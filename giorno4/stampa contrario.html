@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Stampa array inverso</title>
+</head>
+<body>
+  <h1>Stampa elementi array in ordine inverso</h1>
+  <button onclick="stampaInverso()">Mostra elementi</button>
+  <ul id="lista"></ul>
+
+  <script>
+    function stampaInverso() {
+      let array = [1,2,3,4,5,6,7,8,9,10];
+      let o = 10;
+      let lista = document.getElementById("lista");
+      lista.innerHTML = ""; // svuota lista prima di aggiungere
+
+      for (let i = 0; i < 10; i++) {
+        o = o - 1;
+        let li = document.createElement("li");
+        li.textContent = array[o];
+        lista.appendChild(li);
+      }
+    }
+  </script>
+</body>
+</html>

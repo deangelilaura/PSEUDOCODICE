@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Scambio di Variabili</title>
+</head>
+<body>
+  <h1>Scambio di variabili</h1>
+
+  <p id="prima"></p>
+  <p id="dopo"></p>
+
+  <button onclick="scambia()">Esegui lo scambio</button>
+
+  <script>
+    // Valori iniziali
+    let a = 5;
+    let b = 2;
+
+    // Mostra i valori iniziali
+    document.getElementById("prima").textContent = "Prima dello scambio: a = " + a + ", b = " + b;
+
+    function scambia() {
+      // Scambio con destrutturazione (moderno, come in Python)
+      [a, b] = [b, a];
+
+      // Mostra i valori dopo lo scambio
+      document.getElementById("dopo").textContent = "Dopo lo scambio: a = " + a + ", b = " + b;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Saluto interattivo</title>
+</head>
+<body>
+  <h1>Scegli un saluto</h1>
+
+  <label for="scelta">Premi 1 per "ciao", 2 per "buongiorno", 3 per "buonanotte":</label><br><br>
+  <input type="text" id="scelta" maxlength="1" placeholder="1, 2 o 3"><br><br>
+
+  <button onclick="mostraSaluto()">Invia</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function mostraSaluto() {
+      let scelta = document.getElementById("scelta").value.trim();
+      let messaggio;
+
+      if (scelta === "1") {
+        messaggio = "ciao";
+      } else if (scelta === "2") {
+        messaggio = "buongiorno";
+      } else if (scelta === "3") {
+        messaggio = "buonanotte";
+      } else {
+        messaggio = "Scelta non valida";
+      }
+
+      document.getElementById("risultato").textContent = messaggio;
+    }
+  </script>
+</body>
+</html>
