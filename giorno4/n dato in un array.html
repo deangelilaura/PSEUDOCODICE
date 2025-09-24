@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Conta Occorrenze nell'Array</title>
+</head>
+<body>
+  <h1>Conta Occorrenze nell'Array</h1>
+  <p>Array: [1, 7, 8, 3, 5, 7, 1]</p>
+
+  <label for="numero">Inserisci un numero da cercare:</label>
+  <input type="number" id="numero" />
+  <button onclick="contaOccorrenze()">Conta</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    const array = [1, 7, 8, 3, 5, 7, 1];
+
+    function contaOccorrenze() {
+      const n = parseInt(document.getElementById("numero").value, 10);
+      if (isNaN(n)) {
+        document.getElementById("risultato").textContent = "Per favore inserisci un numero valido.";
+        return;
+      }
+      const count = array.filter(x => x === n).length;
+      document.getElementById("risultato").textContent = `Il numero ${n} appare ${count} volte nell'array.`;
+    }
+  </script>
+</body>
+</html>

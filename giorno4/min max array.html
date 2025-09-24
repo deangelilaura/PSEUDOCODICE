@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minimo e Massimo</title>
+</head>
+<body>
+  <h1>Minimo e Massimo di un Array</h1>
+  <p id="minimi"></p>
+  <p id="massimi"></p>
+
+  <script>
+    let array = [4, 7, 8, 3, 5];
+    array.sort((a, b) => a - b);
+    document.getElementById("minimi").textContent = "minimo: " + array[0];
+    document.getElementById("massimi").textContent = "massimo: " + array[array.length - 1];
+  </script>
+</body>
+</html>
